@@ -1,0 +1,3 @@
+post-build=motorola/ME865_cn/edison:4.0.4/6.7.2_GC-180-EDS-20/31:user/release-keys
+post-timestamp=1344332488
+pre-device=edison

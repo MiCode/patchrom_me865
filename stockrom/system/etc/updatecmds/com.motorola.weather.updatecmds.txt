@@ -1,0 +1,7 @@
+# Migrate data from the old pacakge name to new
+com.motorola.weather:com.motorola.widgetapp.weather
+    databases/weather.db
+com.motorola.weather:com.motorola.widgetapp.weather
+    shared_prefs/weather_display_current_preference.xml
+com.motorola.weather:com.motorola.widgetapp.weather
+    shared_prefs/SinaWeather.xml
