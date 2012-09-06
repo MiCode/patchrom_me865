@@ -7482,22 +7482,10 @@
 
     move-result-object v50
 
-    .line 3083
     .local v50, title:Ljava/lang/String;
     if-nez v50, :cond_3
 
     if-eqz v10, :cond_3
-
-    .line 3084
-    invoke-static {v10}, Landroid/media/MediaFile;->getFileTypeByPath(Ljava/lang/String;)I
-
-    move-result v3
-
-    invoke-static {v3}, Landroid/media/MediaFile;->isAudioFileType(I)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_3
 
     .line 3085
     invoke-static {v10}, Landroid/media/MediaFile;->getFileTitle(Ljava/lang/String;)Ljava/lang/String;

@@ -2188,20 +2188,17 @@
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
     .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_2
 
-    .line 2465
     move-object/from16 v0, p0
 
     move-object/from16 v1, v19
 
     invoke-direct {v0, v1}, Lcom/android/server/BackupManagerService$PerformFullBackupTask;->tearDown(Landroid/content/pm/PackageInfo;)V
 
-    .line 2467
     if-eqz v17, :cond_5
 
     :try_start_2
-    throw v17
+    invoke-virtual/range {v17 .. v17}, Ljava/io/OutputStream;->close()V
 
-    .line 2468
     :cond_5
     move-object/from16 v0, p0
 
@@ -2533,20 +2530,17 @@
     .catchall {:try_start_a .. :try_end_a} :catchall_0
     .catch Landroid/os/RemoteException; {:try_start_a .. :try_end_a} :catch_2
 
-    .line 2465
     move-object/from16 v0, p0
 
     move-object/from16 v1, v19
 
     invoke-direct {v0, v1}, Lcom/android/server/BackupManagerService$PerformFullBackupTask;->tearDown(Landroid/content/pm/PackageInfo;)V
 
-    .line 2467
     if-eqz v17, :cond_a
 
     :try_start_b
-    throw v17
+    invoke-virtual/range {v17 .. v17}, Ljava/io/OutputStream;->close()V
 
-    .line 2468
     :cond_a
     move-object/from16 v0, p0
 

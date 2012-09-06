@@ -2143,9 +2143,9 @@
 
     if-nez v7, :cond_1
 
-    iget-boolean v7, p0, Lcom/android/server/WifiService;->mNotificationSecuredEnabled:Z
+    #iget-boolean v7, p0, Lcom/android/server/WifiService;->mNotificationSecuredEnabled:Z
 
-    if-nez v7, :cond_1
+    #if-nez v7, :cond_1
 
     .line 2799
     :cond_0

@@ -1968,7 +1968,7 @@
 .end method
 
 .method public static compareLoosely(Ljava/lang/String;Ljava/lang/String;)Z
-    .locals 17
+    .locals 19
     .parameter "a"
     .parameter "b"
 
@@ -2077,12 +2077,16 @@
 
     .line 548
     .local v6, ia:I
+    add-int/lit8 v17, v6, 0x1
+
     invoke-static/range {p1 .. p1}, Landroid/telephony/PhoneNumberUtils;->indexOfLastNetworkChar(Ljava/lang/String;)I
 
     move-result v7
 
     .line 549
     .local v7, ib:I
+    add-int/lit8 v18, v7, 0x1
+
     const/4 v8, 0x0
 
     .line 551
@@ -2107,20 +2111,13 @@
     :cond_6
     if-ge v8, v11, :cond_e
 
-    .line 587
-    invoke-virtual/range {p0 .. p0}, Ljava/lang/String;->length()I
 
-    move-result v16
-
-    sub-int v4, v16, v13
+    sub-int v4, v17, v13
 
     .line 588
     .local v4, effectiveALen:I
-    invoke-virtual/range {p1 .. p1}, Ljava/lang/String;->length()I
 
-    move-result v16
-
-    sub-int v5, v16, v14
+    sub-int v5, v18, v14
 
     .line 593
     .local v5, effectiveBLen:I
@@ -3842,7 +3839,10 @@
     .parameter "defaultCountryIso"
 
     .prologue
-    .line 1610
+    invoke-static {p0}, Lmiui/telephony/PhoneNumberUtils;->removeDashesAndBlanks(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p0
+
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
     move-result v1
@@ -5837,6 +5837,9 @@
 
     move-result-object p0
 
+    invoke-static {p0}, Lmiui/telephony/PhoneNumberUtils;->parseNumber(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p0
     .line 1767
     if-eqz p2, :cond_3
 
@@ -7417,7 +7420,7 @@
     if-eq v0, v4, :cond_1
 
     :cond_0
-    invoke-static {v0}, Landroid/telephony/PhoneNumberUtils;->isISODigit(C)Z
+    invoke-static {v0}, Landroid/telephony/PhoneNumberUtils;->isNonSeparator(C)Z
 
     move-result v4
 

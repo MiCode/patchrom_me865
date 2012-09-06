@@ -1901,13 +1901,146 @@
 .end method
 
 .method public getCdmaAsuLevel()I
-    .locals 1
+    .locals 8
 
     .prologue
-    .line 892
-    iget v0, p0, Landroid/telephony/SignalStrength;->mCdmaAsuLevel:I
+    const/16 v7, -0x5a
 
-    return v0
+    const/16 v6, -0x64
+
+    invoke-virtual {p0}, Landroid/telephony/SignalStrength;->getCdmaDbm()I
+
+    move-result v1
+
+    .local v1, cdmaDbm:I
+    invoke-virtual {p0}, Landroid/telephony/SignalStrength;->getCdmaEcio()I
+
+    move-result v2
+
+    .local v2, cdmaEcio:I
+    const/16 v5, -0x4b
+
+    if-lt v1, v5, :cond_0
+
+    const/16 v0, 0x10
+
+    .local v0, cdmaAsuLevel:I
+    :goto_0
+    if-lt v2, v7, :cond_5
+
+    const/16 v3, 0x10
+
+    .local v3, ecioAsuLevel:I
+    :goto_1
+    if-ge v0, v3, :cond_a
+
+    move v4, v0
+
+    .local v4, level:I
+    :goto_2
+    return v4
+
+    .end local v0           #cdmaAsuLevel:I
+    .end local v3           #ecioAsuLevel:I
+    .end local v4           #level:I
+    :cond_0
+    const/16 v5, -0x52
+
+    if-lt v1, v5, :cond_1
+
+    const/16 v0, 0x8
+
+    .restart local v0       #cdmaAsuLevel:I
+    goto :goto_0
+
+    .end local v0           #cdmaAsuLevel:I
+    :cond_1
+    if-lt v1, v7, :cond_2
+
+    const/4 v0, 0x4
+
+    .restart local v0       #cdmaAsuLevel:I
+    goto :goto_0
+
+    .end local v0           #cdmaAsuLevel:I
+    :cond_2
+    const/16 v5, -0x5f
+
+    if-lt v1, v5, :cond_3
+
+    const/4 v0, 0x2
+
+    .restart local v0       #cdmaAsuLevel:I
+    goto :goto_0
+
+    .end local v0           #cdmaAsuLevel:I
+    :cond_3
+    if-lt v1, v6, :cond_4
+
+    const/4 v0, 0x1
+
+    .restart local v0       #cdmaAsuLevel:I
+    goto :goto_0
+
+    .end local v0           #cdmaAsuLevel:I
+    :cond_4
+    const/16 v0, 0x63
+
+    .restart local v0       #cdmaAsuLevel:I
+    goto :goto_0
+
+    :cond_5
+    if-lt v2, v6, :cond_6
+
+    const/16 v3, 0x8
+
+    .restart local v3       #ecioAsuLevel:I
+    goto :goto_1
+
+    .end local v3           #ecioAsuLevel:I
+    :cond_6
+    const/16 v5, -0x73
+
+    if-lt v2, v5, :cond_7
+
+    const/4 v3, 0x4
+
+    .restart local v3       #ecioAsuLevel:I
+    goto :goto_1
+
+    .end local v3           #ecioAsuLevel:I
+    :cond_7
+    const/16 v5, -0x82
+
+    if-lt v2, v5, :cond_8
+
+    const/4 v3, 0x2
+
+    .restart local v3       #ecioAsuLevel:I
+    goto :goto_1
+
+    .end local v3           #ecioAsuLevel:I
+    :cond_8
+    const/16 v5, -0x96
+
+    if-lt v2, v5, :cond_9
+
+    const/4 v3, 0x1
+
+    .restart local v3       #ecioAsuLevel:I
+    goto :goto_1
+
+    .end local v3           #ecioAsuLevel:I
+    :cond_9
+    const/16 v3, 0x63
+
+    .restart local v3       #ecioAsuLevel:I
+    goto :goto_1
+
+    :cond_a
+    move v4, v3
+
+    goto :goto_2
 .end method
 
 .method public getCdmaAsuMaxLevel()I
@@ -1941,13 +2074,128 @@
 .end method
 
 .method public getCdmaLevel()I
-    .locals 1
+    .locals 6
 
     .prologue
-    .line 883
-    iget v0, p0, Landroid/telephony/SignalStrength;->mCdmaLevel:I
+    invoke-virtual {p0}, Landroid/telephony/SignalStrength;->getCdmaDbm()I
 
-    return v0
+    move-result v0
+
+    .local v0, cdmaDbm:I
+    invoke-virtual {p0}, Landroid/telephony/SignalStrength;->getCdmaEcio()I
+
+    move-result v1
+
+    .local v1, cdmaEcio:I
+    const/16 v5, -0x4b
+
+    if-lt v0, v5, :cond_0
+
+    const/4 v3, 0x4
+
+    .local v3, levelDbm:I
+    :goto_0
+    const/16 v5, -0x5a
+
+    if-lt v1, v5, :cond_4
+
+    const/4 v4, 0x4
+
+    .local v4, levelEcio:I
+    :goto_1
+    if-ge v3, v4, :cond_8
+
+    move v2, v3
+
+    .local v2, level:I
+    :goto_2
+    return v2
+
+    .end local v2           #level:I
+    .end local v3           #levelDbm:I
+    .end local v4           #levelEcio:I
+    :cond_0
+    const/16 v5, -0x55
+
+    if-lt v0, v5, :cond_1
+
+    const/4 v3, 0x3
+
+    .restart local v3       #levelDbm:I
+    goto :goto_0
+
+    .end local v3           #levelDbm:I
+    :cond_1
+    const/16 v5, -0x5f
+
+    if-lt v0, v5, :cond_2
+
+    const/4 v3, 0x2
+
+    .restart local v3       #levelDbm:I
+    goto :goto_0
+
+    .end local v3           #levelDbm:I
+    :cond_2
+    const/16 v5, -0x64
+
+    if-lt v0, v5, :cond_3
+
+    const/4 v3, 0x1
+
+    .restart local v3       #levelDbm:I
+    goto :goto_0
+
+    .end local v3           #levelDbm:I
+    :cond_3
+    const/4 v3, 0x0
+
+    .restart local v3       #levelDbm:I
+    goto :goto_0
+
+    :cond_4
+    const/16 v5, -0x6e
+
+    if-lt v1, v5, :cond_5
+
+    const/4 v4, 0x3
+
+    .restart local v4       #levelEcio:I
+    goto :goto_1
+
+    .end local v4           #levelEcio:I
+    :cond_5
+    const/16 v5, -0x82
+
+    if-lt v1, v5, :cond_6
+
+    const/4 v4, 0x2
+
+    .restart local v4       #levelEcio:I
+    goto :goto_1
+
+    .end local v4           #levelEcio:I
+    :cond_6
+    const/16 v5, -0x96
+
+    if-lt v1, v5, :cond_7
+
+    const/4 v4, 0x1
+
+    .restart local v4       #levelEcio:I
+    goto :goto_1
+
+    .end local v4           #levelEcio:I
+    :cond_7
+    const/4 v4, 0x0
+
+    .restart local v4       #levelEcio:I
+    goto :goto_1
+
+    :cond_8
+    move v2, v4
+
+    goto :goto_2
 .end method
 
 .method public getCdmaMaxLevel()I
@@ -2044,13 +2292,150 @@
 .end method
 
 .method public getEvdoAsuLevel()I
-    .locals 1
+    .locals 6
 
     .prologue
-    .line 910
-    iget v0, p0, Landroid/telephony/SignalStrength;->mEvdoAsuLevel:I
+    invoke-virtual {p0}, Landroid/telephony/SignalStrength;->getEvdoDbm()I
 
-    return v0
+    move-result v0
+
+    .local v0, evdoDbm:I
+    invoke-virtual {p0}, Landroid/telephony/SignalStrength;->getEvdoSnr()I
+
+    move-result v1
+
+    .local v1, evdoSnr:I
+    const/16 v5, -0x41
+
+    if-lt v0, v5, :cond_0
+
+    const/16 v3, 0x10
+
+    .local v3, levelEvdoDbm:I
+    :goto_0
+    const/4 v5, 0x7
+
+    if-lt v1, v5, :cond_5
+
+    const/16 v4, 0x10
+
+    .local v4, levelEvdoSnr:I
+    :goto_1
+    if-ge v3, v4, :cond_a
+
+    move v2, v3
+
+    .local v2, level:I
+    :goto_2
+    return v2
+
+    .end local v2           #level:I
+    .end local v3           #levelEvdoDbm:I
+    .end local v4           #levelEvdoSnr:I
+    :cond_0
+    const/16 v5, -0x4b
+
+    if-lt v0, v5, :cond_1
+
+    const/16 v3, 0x8
+
+    .restart local v3       #levelEvdoDbm:I
+    goto :goto_0
+
+    .end local v3           #levelEvdoDbm:I
+    :cond_1
+    const/16 v5, -0x55
+
+    if-lt v0, v5, :cond_2
+
+    const/4 v3, 0x4
+
+    .restart local v3       #levelEvdoDbm:I
+    goto :goto_0
+
+    .end local v3           #levelEvdoDbm:I
+    :cond_2
+    const/16 v5, -0x5f
+
+    if-lt v0, v5, :cond_3
+
+    const/4 v3, 0x2
+
+    .restart local v3       #levelEvdoDbm:I
+    goto :goto_0
+
+    .end local v3           #levelEvdoDbm:I
+    :cond_3
+    const/16 v5, -0x69
+
+    if-lt v0, v5, :cond_4
+
+    const/4 v3, 0x1
+
+    .restart local v3       #levelEvdoDbm:I
+    goto :goto_0
+
+    .end local v3           #levelEvdoDbm:I
+    :cond_4
+    const/16 v3, 0x63
+
+    .restart local v3       #levelEvdoDbm:I
+    goto :goto_0
+
+    :cond_5
+    const/4 v5, 0x6
+
+    if-lt v1, v5, :cond_6
+
+    const/16 v4, 0x8
+
+    .restart local v4       #levelEvdoSnr:I
+    goto :goto_1
+
+    .end local v4           #levelEvdoSnr:I
+    :cond_6
+    const/4 v5, 0x5
+
+    if-lt v1, v5, :cond_7
+
+    const/4 v4, 0x4
+
+    .restart local v4       #levelEvdoSnr:I
+    goto :goto_1
+
+    .end local v4           #levelEvdoSnr:I
+    :cond_7
+    const/4 v5, 0x3
+
+    if-lt v1, v5, :cond_8
+
+    const/4 v4, 0x2
+
+    .restart local v4       #levelEvdoSnr:I
+    goto :goto_1
+
+    .end local v4           #levelEvdoSnr:I
+    :cond_8
+    const/4 v5, 0x1
+
+    if-lt v1, v5, :cond_9
+
+    const/4 v4, 0x1
+
+    .restart local v4       #levelEvdoSnr:I
+    goto :goto_1
+
+    .end local v4           #levelEvdoSnr:I
+    :cond_9
+    const/16 v4, 0x63
+
+    .restart local v4       #levelEvdoSnr:I
+    goto :goto_1
+
+    :cond_a
+    move v2, v4
+
+    goto :goto_2
 .end method
 
 .method public getEvdoAsuMaxLevel()I
@@ -2084,13 +2469,128 @@
 .end method
 
 .method public getEvdoLevel()I
-    .locals 1
+    .locals 6
 
     .prologue
-    .line 901
-    iget v0, p0, Landroid/telephony/SignalStrength;->mEvdoLevel:I
+    invoke-virtual {p0}, Landroid/telephony/SignalStrength;->getEvdoDbm()I
 
-    return v0
+    move-result v0
+
+    .local v0, evdoDbm:I
+    invoke-virtual {p0}, Landroid/telephony/SignalStrength;->getEvdoSnr()I
+
+    move-result v1
+
+    .local v1, evdoSnr:I
+    const/16 v5, -0x41
+
+    if-lt v0, v5, :cond_0
+
+    const/4 v3, 0x4
+
+    .local v3, levelEvdoDbm:I
+    :goto_0
+    const/4 v5, 0x7
+
+    if-lt v1, v5, :cond_4
+
+    const/4 v4, 0x4
+
+    .local v4, levelEvdoSnr:I
+    :goto_1
+    if-ge v3, v4, :cond_8
+
+    move v2, v3
+
+    .local v2, level:I
+    :goto_2
+    return v2
+
+    .end local v2           #level:I
+    .end local v3           #levelEvdoDbm:I
+    .end local v4           #levelEvdoSnr:I
+    :cond_0
+    const/16 v5, -0x4b
+
+    if-lt v0, v5, :cond_1
+
+    const/4 v3, 0x3
+
+    .restart local v3       #levelEvdoDbm:I
+    goto :goto_0
+
+    .end local v3           #levelEvdoDbm:I
+    :cond_1
+    const/16 v5, -0x5a
+
+    if-lt v0, v5, :cond_2
+
+    const/4 v3, 0x2
+
+    .restart local v3       #levelEvdoDbm:I
+    goto :goto_0
+
+    .end local v3           #levelEvdoDbm:I
+    :cond_2
+    const/16 v5, -0x69
+
+    if-lt v0, v5, :cond_3
+
+    const/4 v3, 0x1
+
+    .restart local v3       #levelEvdoDbm:I
+    goto :goto_0
+
+    .end local v3           #levelEvdoDbm:I
+    :cond_3
+    const/4 v3, 0x0
+
+    .restart local v3       #levelEvdoDbm:I
+    goto :goto_0
+
+    :cond_4
+    const/4 v5, 0x5
+
+    if-lt v1, v5, :cond_5
+
+    const/4 v4, 0x3
+
+    .restart local v4       #levelEvdoSnr:I
+    goto :goto_1
+
+    .end local v4           #levelEvdoSnr:I
+    :cond_5
+    const/4 v5, 0x3
+
+    if-lt v1, v5, :cond_6
+
+    const/4 v4, 0x2
+
+    .restart local v4       #levelEvdoSnr:I
+    goto :goto_1
+
+    .end local v4           #levelEvdoSnr:I
+    :cond_6
+    const/4 v5, 0x1
+
+    if-lt v1, v5, :cond_7
+
+    const/4 v4, 0x1
+
+    .restart local v4       #levelEvdoSnr:I
+    goto :goto_1
+
+    .end local v4           #levelEvdoSnr:I
+    :cond_7
+    const/4 v4, 0x0
+
+    .restart local v4       #levelEvdoSnr:I
+    goto :goto_1
+
+    :cond_8
+    move v2, v4
+
+    goto :goto_2
 .end method
 
 .method public getEvdoMaxLevel()I
@@ -2213,13 +2713,68 @@
 .end method
 
 .method public getGsmLevel()I
-    .locals 1
+    .locals 3
 
     .prologue
-    .line 845
-    iget v0, p0, Landroid/telephony/SignalStrength;->mGsmLevel:I
+    invoke-virtual {p0}, Landroid/telephony/SignalStrength;->getGsmSignalStrength()I
 
-    return v0
+    move-result v0
+
+    .local v0, asu:I
+    const/4 v2, 0x2
+
+    if-le v0, v2, :cond_0
+
+    const/16 v2, 0x63
+
+    if-ne v0, v2, :cond_1
+
+    :cond_0
+    const/4 v1, 0x0
+
+    .local v1, level:I
+    :goto_0
+    return v1
+
+    .end local v1           #level:I
+    :cond_1
+    const/16 v2, 0xc
+
+    if-lt v0, v2, :cond_2
+
+    const/4 v1, 0x4
+
+    .restart local v1       #level:I
+    goto :goto_0
+
+    .end local v1           #level:I
+    :cond_2
+    const/16 v2, 0x8
+
+    if-lt v0, v2, :cond_3
+
+    const/4 v1, 0x3
+
+    .restart local v1       #level:I
+    goto :goto_0
+
+    .end local v1           #level:I
+    :cond_3
+    const/4 v2, 0x5
+
+    if-lt v0, v2, :cond_4
+
+    const/4 v1, 0x2
+
+    .restart local v1       #level:I
+    goto :goto_0
+
+    .end local v1           #level:I
+    :cond_4
+    const/4 v1, 0x1
+
+    .restart local v1       #level:I
+    goto :goto_0
 .end method
 
 .method public getGsmMaxLevel()I
@@ -2282,36 +2837,30 @@
     .locals 2
 
     .prologue
-    .line 675
     iget-boolean v1, p0, Landroid/telephony/SignalStrength;->isGsm:Z
 
     if-eqz v1, :cond_2
 
-    .line 676
     invoke-virtual {p0}, Landroid/telephony/SignalStrength;->isLte()Z
 
     move-result v1
 
     if-nez v1, :cond_1
 
-    .line 677
     invoke-virtual {p0}, Landroid/telephony/SignalStrength;->isUmts()Z
 
     move-result v1
 
     if-eqz v1, :cond_0
 
-    .line 678
-    invoke-virtual {p0}, Landroid/telephony/SignalStrength;->getUmtsLevel()I
+    invoke-virtual {p0}, Landroid/telephony/SignalStrength;->getGsmLevel()I
 
     move-result v0
 
-    .line 702
     .local v0, level:I
     :goto_0
     return v0
 
-    .line 680
     .end local v0           #level:I
     :cond_0
     invoke-virtual {p0}, Landroid/telephony/SignalStrength;->getGsmLevel()I
@@ -2449,13 +2998,145 @@
 .end method
 
 .method public getLteLevel()I
-    .locals 1
+    .locals 7
 
     .prologue
-    .line 928
-    iget v0, p0, Landroid/telephony/SignalStrength;->mLteLevel:I
+    const v6, 0x7fffffff
 
+    const/4 v5, -0x1
+
+    const/4 v1, 0x0
+
+    .local v1, levelLteRsrp:I
+    const/4 v2, 0x0
+
+    .local v2, levelLteRssnr:I
+    iget v3, p0, Landroid/telephony/SignalStrength;->mLteRsrp:I
+
+    if-ne v3, v5, :cond_0
+
+    const/4 v1, 0x0
+
+    :goto_0
+    iget v3, p0, Landroid/telephony/SignalStrength;->mLteRssnr:I
+
+    if-ne v3, v6, :cond_4
+
+    const/4 v2, 0x0
+
+    :goto_1
+    iget v3, p0, Landroid/telephony/SignalStrength;->mLteRsrp:I
+
+    if-ne v3, v5, :cond_8
+
+    move v0, v2
+
+    .local v0, level:I
+    :goto_2
     return v0
+
+    .end local v0           #level:I
+    :cond_0
+    iget v3, p0, Landroid/telephony/SignalStrength;->mLteRsrp:I
+
+    const/16 v4, -0x5f
+
+    if-lt v3, v4, :cond_1
+
+    const/4 v1, 0x4
+
+    goto :goto_0
+
+    :cond_1
+    iget v3, p0, Landroid/telephony/SignalStrength;->mLteRsrp:I
+
+    const/16 v4, -0x69
+
+    if-lt v3, v4, :cond_2
+
+    const/4 v1, 0x3
+
+    goto :goto_0
+
+    :cond_2
+    iget v3, p0, Landroid/telephony/SignalStrength;->mLteRsrp:I
+
+    const/16 v4, -0x73
+
+    if-lt v3, v4, :cond_3
+
+    const/4 v1, 0x2
+
+    goto :goto_0
+
+    :cond_3
+    const/4 v1, 0x1
+
+    goto :goto_0
+
+    :cond_4
+    iget v3, p0, Landroid/telephony/SignalStrength;->mLteRssnr:I
+
+    const/16 v4, 0x2d
+
+    if-lt v3, v4, :cond_5
+
+    const/4 v2, 0x4
+
+    goto :goto_1
+
+    :cond_5
+    iget v3, p0, Landroid/telephony/SignalStrength;->mLteRssnr:I
+
+    const/16 v4, 0xa
+
+    if-lt v3, v4, :cond_6
+
+    const/4 v2, 0x3
+
+    goto :goto_1
+
+    :cond_6
+    iget v3, p0, Landroid/telephony/SignalStrength;->mLteRssnr:I
+
+    const/16 v4, -0x1e
+
+    if-lt v3, v4, :cond_7
+
+    const/4 v2, 0x2
+
+    goto :goto_1
+
+    :cond_7
+    const/4 v2, 0x1
+
+    goto :goto_1
+
+    :cond_8
+    iget v3, p0, Landroid/telephony/SignalStrength;->mLteRssnr:I
+
+    if-ne v3, v6, :cond_9
+
+    move v0, v1
+
+    .restart local v0       #level:I
+    goto :goto_2
+
+    .end local v0           #level:I
+    :cond_9
+    if-ge v2, v1, :cond_a
+
+    move v0, v2
+
+    .restart local v0       #level:I
+    :goto_3
+    goto :goto_2
+
+    .end local v0           #level:I
+    :cond_a
+    move v0, v1
+
+    goto :goto_3
 .end method
 
 .method public getLteMaxLevel()I

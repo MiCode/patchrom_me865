@@ -58,7 +58,7 @@
     .line 1740
     iget-object v0, p0, Lcom/android/internal/policy/impl/LockPatternKeyguardView$4;->this$0:Lcom/android/internal/policy/impl/LockPatternKeyguardView;
 
-    invoke-static {}, Lcom/android/internal/policy/impl/LockPatternKeyguardView;->access$000()Lcom/android/internal/policy/impl/LockPatternKeyguardView$Mode;
+    invoke-static {v0}, Lcom/android/internal/policy/impl/LockPatternKeyguardView;->access$000(Lcom/android/internal/policy/impl/LockPatternKeyguardView;)Lcom/android/internal/policy/impl/LockPatternKeyguardView$Mode;
 
     move-result-object v1
 

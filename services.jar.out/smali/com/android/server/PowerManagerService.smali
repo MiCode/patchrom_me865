@@ -212,7 +212,7 @@
 
 .field private mButtonLightTimeoutTask:Lcom/android/server/PowerManagerService$ButtonLightTimeoutTask;
 
-.field private mContext:Landroid/content/Context;
+.field mContext:Landroid/content/Context;
 
 .field private mDeepSleepMode:Z
 
@@ -2441,6 +2441,55 @@
 
     .line 3029
     and-int/lit8 p1, p1, -0x5
+
+    goto :goto_0
+.end method
+
+.method private goToRecovery(Ljava/lang/String;)Ljava/lang/String;
+    .locals 3
+    .parameter "reason"
+
+    .prologue
+    if-eqz p1, :cond_0
+
+    const-string v2, "recovery"
+
+    invoke-virtual {p1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    :try_start_0
+    new-instance v1, Ljava/io/FileWriter;
+
+    const-string v2, "/data/.recovery_mode"
+
+    invoke-direct {v1, v2}, Ljava/io/FileWriter;-><init>(Ljava/lang/String;)V
+
+    .local v1, fw:Ljava/io/FileWriter;
+    const-string v2, "1"
+
+    invoke-virtual {v1, v2}, Ljava/io/FileWriter;->write(Ljava/lang/String;)V
+
+    invoke-virtual {v1}, Ljava/io/FileWriter;->close()V
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+
+    const/4 p1, 0x0
+
+    .end local v1           #fw:Ljava/io/FileWriter;
+    .end local p1
+    :cond_0
+    :goto_0
+    return-object p1
+
+    .restart local p1
+    :catch_0
+    move-exception v0
+
+    .local v0, e:Ljava/io/IOException;
+    invoke-virtual {v0}, Ljava/io/IOException;->printStackTrace()V
 
     goto :goto_0
 .end method
@@ -15406,26 +15455,25 @@
 
     throw v2
 
-    .line 3635
     :cond_1
+    invoke-direct {p0, p1}, Lcom/android/server/PowerManagerService;->goToRecovery(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p1
+
     move-object v0, p1
 
-    .line 3636
     .local v0, finalReason:Ljava/lang/String;
     new-instance v1, Lcom/android/server/PowerManagerService$11;
 
     invoke-direct {v1, p0, v0}, Lcom/android/server/PowerManagerService$11;-><init>(Lcom/android/server/PowerManagerService;Ljava/lang/String;)V
 
-    .line 3646
     .local v1, runnable:Ljava/lang/Runnable;
     iget-object v2, p0, Lcom/android/server/PowerManagerService;->mHandler:Landroid/os/Handler;
 
     invoke-virtual {v2, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 3649
     monitor-enter v1
 
-    .line 3652
     :goto_0
     :try_start_0
     invoke-virtual {v1}, Ljava/lang/Object;->wait()V

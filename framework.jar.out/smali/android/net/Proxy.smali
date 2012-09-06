@@ -370,15 +370,9 @@
 
     .line 231
     :cond_1
-    new-instance v4, Lorg/apache/http/HttpHost;
+    invoke-static {v3}, Landroid/net/ExtraProxy;->getPreferredHttpHost(Ljava/net/InetSocketAddress;)Lorg/apache/http/HttpHost;
 
-    invoke-virtual {v3}, Ljava/net/InetSocketAddress;->getPort()I
-
-    move-result v5
-
-    const-string v6, "http"
-
-    invoke-direct {v4, v1, v5, v6}, Lorg/apache/http/HttpHost;-><init>(Ljava/lang/String;ILjava/lang/String;)V
+    move-result-object v4
 
     goto :goto_0
 .end method

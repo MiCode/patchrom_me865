@@ -46,6 +46,9 @@
 
 .field static final TRANSACTION_updateAdnRecordsInEfBySearch1:I = 0x2
 
+.field static final TRANSACTION_getFreeAdn:I = 0x5
+
+.field static final TRANSACTION_getAdnCapacity:I = 0x6
 
 # direct methods
 .method public constructor <init>()V

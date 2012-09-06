@@ -2058,24 +2058,13 @@
     .locals 1
 
     .prologue
-    .line 774
-    iget-boolean v0, p0, Landroid/telephony/TelephonyManager;->mIsDefault:Z
+    sget-object v0, Landroid/telephony/TelephonyManager;->sContext:Landroid/content/Context;
 
-    if-eqz v0, :cond_0
-
-    const-string v0, "gsm.sim.operator.numeric"
-
-    :goto_0
-    invoke-static {v0}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0}, Lmiui/telephony/ExtraTelephonyManager;->getSimOperator(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v0
 
     return-object v0
-
-    :cond_0
-    const-string v0, "gsm.sim.operator.numeric.2"
-
-    goto :goto_0
 .end method
 
 .method public getSimOperatorName()Ljava/lang/String;

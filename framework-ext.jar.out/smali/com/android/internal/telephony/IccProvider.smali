@@ -18,7 +18,7 @@
 
 .field private static final CAPABILITYPBK2:I = 0xd0
 
-.field private static final DBG:Z = true
+.field static final DBG:Z = true
 
 .field private static final EMAILCAPACITY:I = 0x67
 
@@ -74,7 +74,7 @@
 
 .field private static final TAG:Ljava/lang/String; = "IccProvider"
 
-.field private static final URL_MATCHER:Landroid/content/UriMatcher; = null
+.field static final URL_MATCHER:Landroid/content/UriMatcher; = null
 
 .field static andPattern:Ljava/util/regex/Pattern; = null
 
@@ -435,7 +435,7 @@
 
     move-result-object v2
 
-    invoke-direct {p0, v2}, Lcom/android/internal/telephony/IccProvider;->log(Ljava/lang/String;)V
+    invoke-virtual {p0, v2}, Lcom/android/internal/telephony/IccProvider;->log(Ljava/lang/String;)V
 
     .line 631
     const/4 v13, 0x0
@@ -503,7 +503,7 @@
 
     move-result-object v2
 
-    invoke-direct {p0, v2}, Lcom/android/internal/telephony/IccProvider;->log(Ljava/lang/String;)V
+    invoke-virtual {p0, v2}, Lcom/android/internal/telephony/IccProvider;->log(Ljava/lang/String;)V
 
     .line 652
     return v13
@@ -518,7 +518,7 @@
 
     move-result-object v2
 
-    invoke-direct {p0, v2}, Lcom/android/internal/telephony/IccProvider;->log(Ljava/lang/String;)V
+    invoke-virtual {p0, v2}, Lcom/android/internal/telephony/IccProvider;->log(Ljava/lang/String;)V
 
     goto :goto_0
 
@@ -620,7 +620,7 @@
 
     move-result-object v2
 
-    invoke-direct {p0, v2}, Lcom/android/internal/telephony/IccProvider;->log(Ljava/lang/String;)V
+    invoke-virtual {p0, v2}, Lcom/android/internal/telephony/IccProvider;->log(Ljava/lang/String;)V
 
     .line 689
     const/4 v13, 0x0
@@ -697,7 +697,7 @@
 
     move-result-object v2
 
-    invoke-direct {p0, v2}, Lcom/android/internal/telephony/IccProvider;->log(Ljava/lang/String;)V
+    invoke-virtual {p0, v2}, Lcom/android/internal/telephony/IccProvider;->log(Ljava/lang/String;)V
 
     .line 712
     return v13
@@ -726,7 +726,7 @@
 
     move-result-object v2
 
-    invoke-direct {p0, v2}, Lcom/android/internal/telephony/IccProvider;->log(Ljava/lang/String;)V
+    invoke-virtual {p0, v2}, Lcom/android/internal/telephony/IccProvider;->log(Ljava/lang/String;)V
 
     goto :goto_1
 
@@ -750,7 +750,7 @@
     .local v0, capacity:I
     const-string v3, "getAdnCapacity"
 
-    invoke-direct {p0, v3}, Lcom/android/internal/telephony/IccProvider;->log(Ljava/lang/String;)V
+    invoke-virtual {p0, v3}, Lcom/android/internal/telephony/IccProvider;->log(Ljava/lang/String;)V
 
     .line 800
     :try_start_0
@@ -792,7 +792,7 @@
 
     move-result-object v3
 
-    invoke-direct {p0, v3}, Lcom/android/internal/telephony/IccProvider;->log(Ljava/lang/String;)V
+    invoke-virtual {p0, v3}, Lcom/android/internal/telephony/IccProvider;->log(Ljava/lang/String;)V
 
     .line 810
     return v0
@@ -807,7 +807,7 @@
 
     move-result-object v3
 
-    invoke-direct {p0, v3}, Lcom/android/internal/telephony/IccProvider;->log(Ljava/lang/String;)V
+    invoke-virtual {p0, v3}, Lcom/android/internal/telephony/IccProvider;->log(Ljava/lang/String;)V
 
     goto :goto_0
 
@@ -868,7 +868,7 @@
 
     move-result-object v3
 
-    invoke-direct {p0, v3}, Lcom/android/internal/telephony/IccProvider;->log(Ljava/lang/String;)V
+    invoke-virtual {p0, v3}, Lcom/android/internal/telephony/IccProvider;->log(Ljava/lang/String;)V
 
     .line 881
     return v0
@@ -883,7 +883,7 @@
 
     move-result-object v3
 
-    invoke-direct {p0, v3}, Lcom/android/internal/telephony/IccProvider;->log(Ljava/lang/String;)V
+    invoke-virtual {p0, v3}, Lcom/android/internal/telephony/IccProvider;->log(Ljava/lang/String;)V
 
     goto :goto_0
 
@@ -907,7 +907,7 @@
     .local v1, freeAdn:I
     const-string v3, "getFreeAdn"
 
-    invoke-direct {p0, v3}, Lcom/android/internal/telephony/IccProvider;->log(Ljava/lang/String;)V
+    invoke-virtual {p0, v3}, Lcom/android/internal/telephony/IccProvider;->log(Ljava/lang/String;)V
 
     .line 782
     :try_start_0
@@ -949,7 +949,7 @@
 
     move-result-object v3
 
-    invoke-direct {p0, v3}, Lcom/android/internal/telephony/IccProvider;->log(Ljava/lang/String;)V
+    invoke-virtual {p0, v3}, Lcom/android/internal/telephony/IccProvider;->log(Ljava/lang/String;)V
 
     .line 792
     return v1
@@ -964,7 +964,7 @@
 
     move-result-object v3
 
-    invoke-direct {p0, v3}, Lcom/android/internal/telephony/IccProvider;->log(Ljava/lang/String;)V
+    invoke-virtual {p0, v3}, Lcom/android/internal/telephony/IccProvider;->log(Ljava/lang/String;)V
 
     goto :goto_0
 
@@ -1025,7 +1025,7 @@
 
     move-result-object v3
 
-    invoke-direct {p0, v3}, Lcom/android/internal/telephony/IccProvider;->log(Ljava/lang/String;)V
+    invoke-virtual {p0, v3}, Lcom/android/internal/telephony/IccProvider;->log(Ljava/lang/String;)V
 
     .line 864
     return v1
@@ -1040,7 +1040,7 @@
 
     move-result-object v3
 
-    invoke-direct {p0, v3}, Lcom/android/internal/telephony/IccProvider;->log(Ljava/lang/String;)V
+    invoke-virtual {p0, v3}, Lcom/android/internal/telephony/IccProvider;->log(Ljava/lang/String;)V
 
     goto :goto_0
 
@@ -1183,7 +1183,7 @@
 
     move-result-object v9
 
-    invoke-direct {p0, v9}, Lcom/android/internal/telephony/IccProvider;->log(Ljava/lang/String;)V
+    invoke-virtual {p0, v9}, Lcom/android/internal/telephony/IccProvider;->log(Ljava/lang/String;)V
 
     .line 581
     const/4 v3, 0x0
@@ -1244,7 +1244,7 @@
 
     move-result-object v9
 
-    invoke-direct {p0, v9}, Lcom/android/internal/telephony/IccProvider;->log(Ljava/lang/String;)V
+    invoke-virtual {p0, v9}, Lcom/android/internal/telephony/IccProvider;->log(Ljava/lang/String;)V
 
     .line 597
     const/4 v6, 0x0
@@ -1280,7 +1280,7 @@
 
     move-result-object v9
 
-    invoke-direct {p0, v9}, Lcom/android/internal/telephony/IccProvider;->log(Ljava/lang/String;)V
+    invoke-virtual {p0, v9}, Lcom/android/internal/telephony/IccProvider;->log(Ljava/lang/String;)V
 
     goto :goto_0
 
@@ -1311,7 +1311,7 @@
     :goto_2
     const-string v9, "loadFromEf: return results"
 
-    invoke-direct {p0, v9}, Lcom/android/internal/telephony/IccProvider;->log(Ljava/lang/String;)V
+    invoke-virtual {p0, v9}, Lcom/android/internal/telephony/IccProvider;->log(Ljava/lang/String;)V
 
     .line 610
     new-instance v4, Landroid/database/MatrixCursor;
@@ -1521,7 +1521,7 @@
 
     move-result-object v10
 
-    invoke-direct {p0, v10}, Lcom/android/internal/telephony/IccProvider;->log(Ljava/lang/String;)V
+    invoke-virtual {p0, v10}, Lcom/android/internal/telephony/IccProvider;->log(Ljava/lang/String;)V
 
     .line 748
     invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -1624,7 +1624,7 @@
     goto :goto_2
 .end method
 
-.method private log(Ljava/lang/String;)V
+.method log(Ljava/lang/String;)V
     .locals 3
     .parameter "msg"
 
@@ -1751,7 +1751,7 @@
     .line 825
     const-string v3, "updateCapabilityPbk"
 
-    invoke-direct {p0, v3}, Lcom/android/internal/telephony/IccProvider;->log(Ljava/lang/String;)V
+    invoke-virtual {p0, v3}, Lcom/android/internal/telephony/IccProvider;->log(Ljava/lang/String;)V
 
     .line 827
     :try_start_0
@@ -1833,7 +1833,7 @@
 
     move-result-object v3
 
-    invoke-direct {p0, v3}, Lcom/android/internal/telephony/IccProvider;->log(Ljava/lang/String;)V
+    invoke-virtual {p0, v3}, Lcom/android/internal/telephony/IccProvider;->log(Ljava/lang/String;)V
 
     .line 847
     return-void
@@ -1848,7 +1848,7 @@
 
     move-result-object v3
 
-    invoke-direct {p0, v3}, Lcom/android/internal/telephony/IccProvider;->log(Ljava/lang/String;)V
+    invoke-virtual {p0, v3}, Lcom/android/internal/telephony/IccProvider;->log(Ljava/lang/String;)V
 
     goto :goto_0
 
@@ -1990,7 +1990,7 @@
 
     move-result-object v2
 
-    invoke-direct {p0, v2}, Lcom/android/internal/telephony/IccProvider;->log(Ljava/lang/String;)V
+    invoke-virtual {p0, v2}, Lcom/android/internal/telephony/IccProvider;->log(Ljava/lang/String;)V
 
     .line 664
     const/4 v13, 0x0
@@ -2058,7 +2058,7 @@
 
     move-result-object v2
 
-    invoke-direct {p0, v2}, Lcom/android/internal/telephony/IccProvider;->log(Ljava/lang/String;)V
+    invoke-virtual {p0, v2}, Lcom/android/internal/telephony/IccProvider;->log(Ljava/lang/String;)V
 
     .line 680
     return v13
@@ -2073,7 +2073,7 @@
 
     move-result-object v2
 
-    invoke-direct {p0, v2}, Lcom/android/internal/telephony/IccProvider;->log(Ljava/lang/String;)V
+    invoke-virtual {p0, v2}, Lcom/android/internal/telephony/IccProvider;->log(Ljava/lang/String;)V
 
     goto :goto_0
 
@@ -2099,7 +2099,7 @@
 
     move-object/from16 v0, p0
 
-    invoke-direct {v0, v2}, Lcom/android/internal/telephony/IccProvider;->log(Ljava/lang/String;)V
+    invoke-virtual {v0, v2}, Lcom/android/internal/telephony/IccProvider;->log(Ljava/lang/String;)V
 
     .line 377
     new-instance v2, Ljava/lang/StringBuilder;
@@ -2124,7 +2124,7 @@
 
     move-object/from16 v0, p0
 
-    invoke-direct {v0, v2}, Lcom/android/internal/telephony/IccProvider;->log(Ljava/lang/String;)V
+    invoke-virtual {v0, v2}, Lcom/android/internal/telephony/IccProvider;->log(Ljava/lang/String;)V
 
     .line 378
     sget-object v2, Lcom/android/internal/telephony/IccProvider;->URL_MATCHER:Landroid/content/UriMatcher;
@@ -2401,7 +2401,7 @@
 
     move-object/from16 v0, p0
 
-    invoke-direct {v0, v2}, Lcom/android/internal/telephony/IccProvider;->log(Ljava/lang/String;)V
+    invoke-virtual {v0, v2}, Lcom/android/internal/telephony/IccProvider;->log(Ljava/lang/String;)V
 
     .line 429
     invoke-virtual {v11}, Ljava/lang/Integer;->intValue()I
@@ -2541,7 +2541,7 @@
 
     move-object/from16 v0, p0
 
-    invoke-direct {v0, v2}, Lcom/android/internal/telephony/IccProvider;->log(Ljava/lang/String;)V
+    invoke-virtual {v0, v2}, Lcom/android/internal/telephony/IccProvider;->log(Ljava/lang/String;)V
 
     .line 438
     invoke-virtual {v11}, Ljava/lang/Integer;->intValue()I
@@ -2830,7 +2830,7 @@
     .local v6, pin2:Ljava/lang/String;
     const-string v0, "insert"
 
-    invoke-direct {p0, v0}, Lcom/android/internal/telephony/IccProvider;->log(Ljava/lang/String;)V
+    invoke-virtual {p0, v0}, Lcom/android/internal/telephony/IccProvider;->log(Ljava/lang/String;)V
 
     .line 282
     sget-object v0, Lcom/android/internal/telephony/IccProvider;->URL_MATCHER:Landroid/content/UriMatcher;
@@ -3560,7 +3560,7 @@
 
     move-object/from16 v0, p0
 
-    invoke-direct {v0, v1}, Lcom/android/internal/telephony/IccProvider;->log(Ljava/lang/String;)V
+    invoke-virtual {v0, v1}, Lcom/android/internal/telephony/IccProvider;->log(Ljava/lang/String;)V
 
     .line 525
     sget-object v1, Lcom/android/internal/telephony/IccProvider;->URL_MATCHER:Landroid/content/UriMatcher;

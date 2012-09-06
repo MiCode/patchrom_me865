@@ -244,7 +244,7 @@
 
     move-object/from16 v1, v21
 
-    invoke-virtual {v0, v1}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
+    #invoke-virtual {v0, v1}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
 
     .line 3876
     .end local v9           #eapStr:Ljava/lang/String;

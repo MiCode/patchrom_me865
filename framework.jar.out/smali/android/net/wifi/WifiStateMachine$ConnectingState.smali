@@ -152,7 +152,7 @@
 
     move-result-object v4
 
-    invoke-static {v4, v7}, Lcom/motorola/android/net/MotorolaNetworkUtilsExt;->setAutoIp(Ljava/lang/String;I)V
+    #invoke-static {v4, v7}, Lcom/motorola/android/net/MotorolaNetworkUtilsExt;->setAutoIp(Ljava/lang/String;I)V
 
     .line 3905
     iget-object v4, p0, Landroid/net/wifi/WifiStateMachine$ConnectingState;->this$0:Landroid/net/wifi/WifiStateMachine;
@@ -317,7 +317,7 @@
 
     move-result-object v4
 
-    invoke-static {v4, v8}, Lcom/motorola/android/net/MotorolaNetworkUtilsExt;->setAutoIp(Ljava/lang/String;I)V
+    #invoke-static {v4, v8}, Lcom/motorola/android/net/MotorolaNetworkUtilsExt;->setAutoIp(Ljava/lang/String;I)V
 
     .line 3909
     iget-object v4, p0, Landroid/net/wifi/WifiStateMachine$ConnectingState;->this$0:Landroid/net/wifi/WifiStateMachine;

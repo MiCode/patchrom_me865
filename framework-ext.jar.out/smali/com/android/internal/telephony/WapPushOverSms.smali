@@ -84,7 +84,7 @@
 
 
 # virtual methods
-.method public dispatchWapPdu([BLcom/android/internal/telephony/SMSDispatcher$MtSmsTracker;)I
+.method public dispatchWapPdu([BLcom/android/internal/telephony/SMSDispatcher$MtSmsTracker;Ljava/lang/String;)I
     .locals 36
     .parameter "pdu"
     .parameter "mtSmsTracker"
@@ -655,7 +655,35 @@
 
     invoke-static {v0, v13, v1, v2, v3}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    goto/16 :goto_2
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/internal/telephony/WapPushOverSms;->mContext:Landroid/content/Context;
+
+    move-object/from16 v1, v23
+
+    invoke-static {v0, v1}, Lmiui/provider/ExtraTelephony;->checkFirewallForWapPush(Landroid/content/Context;[B)Z
+
+    move-result v2
+
+    if-eqz v2, :goto_2
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/android/internal/telephony/WapPushOverSms;->mSmsDispatcher:Lcom/android/internal/telephony/SMSDispatcher;
+
+    move-object/from16 v31, v0
+
+    const/16 v32, 0x1
+
+    const/16 v33, -0x1
+
+    const/16 v34, 0x0
+
+    move-object/from16 v35, p2
+
+    invoke-virtual/range {v31 .. v35}, Lcom/android/internal/telephony/SMSDispatcher;->acknowledgeLastIncomingSms(ZILandroid/os/Message;Lcom/android/internal/telephony/SMSDispatcher$MtSmsTracker;)V
+
+    goto :goto_0
 
     .end local v13           #dataIndex:I
     .restart local v4       #appIdIndex:I
@@ -1496,6 +1524,16 @@
 
     .line 383
     :cond_13
+    const-string v33, "address"
+
+    move-object/from16 v0, v33
+
+    move-object/from16 v1, p3
+
+    move-object/from16 v2, v22
+    
+    invoke-virtual {v2, v0, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/WapPushOverSms;->mSmsDispatcher:Lcom/android/internal/telephony/SMSDispatcher;

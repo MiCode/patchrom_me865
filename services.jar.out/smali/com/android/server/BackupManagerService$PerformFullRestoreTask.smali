@@ -5840,19 +5840,16 @@
 
     invoke-virtual {v0, v1}, Lcom/android/server/BackupManagerService$PerformFullRestoreTask;->tearDownAgent(Landroid/content/pm/ApplicationInfo;)V
 
-    .line 2973
     if-eqz v12, :cond_1
 
     :try_start_1
-    throw v12
+    invoke-virtual {v12}, Ljava/io/DataInputStream;->close()V
 
-    .line 2974
     :cond_1
     if-eqz v14, :cond_2
 
-    throw v14
+    invoke-virtual {v14}, Ljava/io/FileInputStream;->close()V
 
-    .line 2975
     :cond_2
     move-object/from16 v0, p0
 

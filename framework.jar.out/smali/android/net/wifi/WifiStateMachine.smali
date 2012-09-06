@@ -8342,42 +8342,35 @@
 
     invoke-static {v10, v11}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2238
     new-instance v0, Landroid/content/Intent;
 
     const-string v10, "com.motorola.net.wifi.EAP_METHOD_SELECT"
 
     invoke-direct {v0, v10}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 2239
     .local v0, eapIntent:Landroid/content/Intent;
     const/high16 v10, 0x1000
 
     invoke-virtual {v0, v10}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    .line 2240
     const-string v10, "NETID"
 
     iget v11, p0, Landroid/net/wifi/WifiStateMachine;->eapPendingNetid:I
 
     invoke-virtual {v0, v10, v11}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 2241
     const-string v10, "EAP_OUTER_METHOD_TYPE"
 
     invoke-virtual {v0, v10, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 2242
     const-string v10, "EAP_INNER_METHOD_TYPE"
 
     invoke-virtual {v0, v10, v4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 2243
     iget-object v10, p0, Landroid/net/wifi/WifiStateMachine;->mContext:Landroid/content/Context;
 
-    invoke-virtual {v10, v0}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
+    #invoke-virtual {v10, v0}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
 
-    .line 2246
     .end local v0           #eapIntent:Landroid/content/Intent;
     .end local v1           #eapMethod:Ljava/lang/String;
     .end local v2           #eapSSID:Ljava/lang/String;
