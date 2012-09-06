@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="emailAddressTypes">
+        <item>Nhà riêng</item>
+        <item>Cơ quan</item>
+        <item>Khác</item>
+        <item>Tùy chỉnh</item>
+    </string-array>
+    <string-array name="imProtocols">
+        <item>AIM</item>
+        <item>Windows Live</item>
+        <item>Yahoo</item>
+        <item>Skype</item>
+        <item>QQ</item>
+        <item>Google Talk</item>
+        <item>ICQ</item>
+        <item>Jabber</item>
+    </string-array>
+    <string-array name="organizationTypes">
+        <item>Cơ quan</item>
+        <item>Khác</item>
+        <item>Tùy chỉnh</item>
+    </string-array>
+    <string-array name="phoneTypes">
+        <item>Nhà riêng</item>
+        <item>ĐT di động</item>
+        <item>Cơ quan</item>
+        <item>Số fax Cơ quan</item>
+        <item>Số fax Nhà riêng</item>
+        <item>Số máy nhắn tin</item>
+        <item>Khác</item>
+        <item>Tùy chỉnh</item>
+    </string-array>
+    <string-array name="postalAddressTypes">
+        <item>Nhà riêng</item>
+        <item>Cơ quan</item>
+        <item>Khác</item>
+        <item>Tùy chỉnh</item>
+    </string-array>
+    <string-array name="noEncrypt">
+        <item>com.android.phone</item>
+        <item>com.google.android.backup</item>
+        <item>com.android.systemui</item>
+        <item>com.android.wallpaper</item>
+        <item>com.android.inputmethod.latin</item>
+        <item>com.android.launcher</item>
+        <item>com.android.providers.userdictionary</item>
+        <item>com.google.android.location</item>
+        <item>com.android.vending</item>
+        <item>com.android.settings</item>
+        <item>com.android.protips</item>
+        <item>com.android.music</item>
+        <item>com.google.android.googlequicksearchbox</item>
+        <item>com.google.android.gsf</item>
+        <item>com.google.android.apps.genie.geniewidget</item>
+        <item>com.android.deskclock</item>
+        <item>com.google.android.apps.uploader</item>
+        <item>com.google.android.gm</item>
+        <item>com.android.providers.downloads</item>
+        <item>com.android.providers.contacts</item>
+        <item>com.android.contacts</item>
+    </string-array>
+    <string-array name="imAddressTypes">
+        <item>Nhà riêng</item>
+        <item>Cơ quan</item>
+        <item>Khác</item>
+        <item>Tùy chỉnh</item>
+    </string-array>
+</resources>

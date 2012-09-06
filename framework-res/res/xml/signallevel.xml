@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SignalLevelFile NumberOfBars="5" NumberOfAsuLevels="5" NumberOfSignalEntries="2" NumberOfAsuEntries="0">
+    <SignalLevelInfo RadioType="GSM" SignalBars="5" AsuLevel="0,3,6,10,18" OemSigStrLevel="-999,-107,-101,-93,-77" />
+    <SignalLevelInfo RadioType="UMTS" SignalBars="5" AsuLevel="0,3,6,10,18" OemSigStrLevel="-999,-107,-101,-93,-77" OemBitErrLevel="-99,-99,-99,-99,-99" />
+</SignalLevelFile>

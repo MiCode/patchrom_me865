@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="uid_label">媒體</string>
+    <string name="app_label">媒體儲存空間</string>
+    <string name="upgrade_msg">正在升級媒體資料庫。</string>
+    <string name="artist_label">演出者</string>
+    <string name="search_keywords_in_music_store">在音樂商店裡搜索“%1$s”</string>
+    <string name="search_keywords_in_podcasts">在播客中搜尋 %1$s</string>
+    <string name="search_keywords_in_internet_radio">在網絡收音機里搜索“%1$s”</string>
+    <string name="support_search_in_podcasts">false</string>
+    <string name="search_result_albums">%1$s張專輯</string>
+    <string name="search_result_album">%1$s張專輯</string>
+    <string name="search_result_songs">%1$d首樂曲</string>
+    <string name="search_result_song">%1$d首樂曲</string>
+    <string name="search_result_artists">%1$s個藝術家</string>
+    <string name="search_result_artist">%1$s個藝術家</string>
+</resources>
