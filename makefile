@@ -43,7 +43,6 @@ include $(PORT_BUILD)/porting.mk
 local-zip-misc:
 	@echo Update build.prop
 	cp other/build.prop $(ZIP_DIR)/system/build.prop
-	cp other/default.prop $(ZIP_DIR)/system/default.prop
 
 	@echo update bootanimation
 	rm $(ZIP_DIR)/system/bin/bootanimation
@@ -62,7 +61,7 @@ local-zip-misc:
 	rm -rf $(ZIP_DIR)/system/multiconfig
 	rm -rf $(ZIP_DIR)/system/tts
 	rm -rf $(ZIP_DIR)/system/vendor/app
-	rm -r $(ZIP_DIR)/system/bin/su
+	rm -rf $(ZIP_DIR)/system/bin/su
 
 local-test:
 #	rm -f $(local-out-zip-file)

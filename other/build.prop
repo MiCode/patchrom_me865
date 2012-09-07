@@ -256,3 +256,6 @@ ro.mot.hidden_keyboards=evfwd
 ro.mot.build.version.sdk_int=6
 
 ro.product.contacts.minmatch=10
+
+persist.usb.android_config = 1
+persist.sys.usb.config=adb
