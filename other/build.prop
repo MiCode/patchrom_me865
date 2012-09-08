@@ -201,7 +201,7 @@ ro.config.notification_sound=FadeIn.ogg
 ro.config.alarm_alert=GoodMorning.ogg
 ro.config.sms_received_sound=FadeIn.ogg
 ro.config.sms_delivered_sound=MessageComplete.ogg
-persist.sys.usb.config=mtp
+persist.sys.usb.config=mtp,adb
 persist.sys.timezone=Asia/Shanghai
 ro.config.alarm_alert=Alarm_Classic.ogg
 ro.com.google.gmsversion=4.0_r3
@@ -258,4 +258,3 @@ ro.mot.build.version.sdk_int=6
 ro.product.contacts.minmatch=10
 
 persist.usb.android_config = 1
-persist.sys.usb.config=adb
