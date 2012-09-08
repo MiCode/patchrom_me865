@@ -23,7 +23,8 @@ local-phone-apps := BlurCamera FaceLock LatinIME LatinImeDictionaryPack Applicat
 	LiveWallpapersPicker MotorolaSettingsProvider MusicFX oma1motService OMAPPowerMeter \
 	OMAProvisioning OneTimeInitializer usbcamera UserDictionaryProvider VisualizationWallpapers \
 	VoiceSearch DefaultContainerService ExtDispService MediaProvider SmartActions ContextEngine \
-	DockComm DockService MotoDockHelperService SmartCarDock SmartDock SmartActionFW
+	DockComm DockService MotoDockHelperService SmartDock SmartActionFW SmartActionMFW DLNA SetupProvider \
+	blur-services DlnaSystemService
 
 # To include the local targets before and after zip the final ZIP file, 
 # and the local-targets should:
@@ -51,7 +52,7 @@ local-zip-misc:
 	@echo add system config
 	cp other/system_etc/* $(ZIP_DIR)/system/etc/
 	cp other/system_xbin/* $(ZIP_DIR)/system/xbin/
-	cp other/system_lib/* $(ZIP_DIR)/system/lib/
+	#cp other/system_lib/* $(ZIP_DIR)/system/lib/
 
 	@echo add system app
 	#cp other/system_app/* $(ZIP_DIR)/system/app/
