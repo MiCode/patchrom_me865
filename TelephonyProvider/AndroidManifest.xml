@@ -14,5 +14,11 @@
         <provider android:name="DlutProvider" android:multiprocess="true" android:authorities="dlut" />
         <provider android:name="OperatorDatabaseProvider" android:multiprocess="true" android:authorities="cdma_operator" />
         <provider android:name="OperatorDatabaseProvider" android:multiprocess="true" android:authorities="gsm_operator" />
+        <provider android:name="FirewallProvider" android:multiprocess="true" android:authorities="firewall" />
+        <receiver android:name="AccountsChangedBroadcastReceiver">
+            <intent-filter>
+                <action android:name="android.accounts.LOGIN_ACCOUNTS_PRE_CHANGED" />
+            </intent-filter>
+        </receiver>
     </application>
 </manifest>
