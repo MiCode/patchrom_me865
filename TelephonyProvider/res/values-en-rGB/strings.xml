@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="gsm_operator_1">VIBO</string>
+    <string name="gsm_operator_2">CHINA MOBILE</string>
+    <string name="gsm_operator_3">3 Macau (2g)</string>
+    <string name="gsm_operator_4">Taiwan Mobile</string>
+    <string name="gsm_operator_5">MobiTai</string>
+    <string name="gsm_operator_6">KG Telecom</string>
+    <string name="gsm_operator_7">SmarTone PCS</string>
+    <string name="gsm_operator_8">SmarTone</string>
+    <string name="gsm_operator_9">Chunghwa</string>
+    <string name="gsm_operator_10">CHINA UNICOM</string>
+    <string name="gsm_operator_11">Far EasTone</string>
+    <string name="gsm_operator_12">CTM</string>
+    <string name="gsm_operator_13">CHINA MOBILE HK</string>
+    <string name="gsm_operator_14">TransAsia</string>
+    <string name="app_label">Phone/messaging storage</string>
+</resources>
