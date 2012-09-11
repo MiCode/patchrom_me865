@@ -56,7 +56,7 @@
     if-eqz v2, :cond_1
 
     .line 91
-    const/4 v0, 0x1
+    const/4 v0, 0x0
 
     .local v0, i:I
     :goto_0
