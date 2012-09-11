@@ -1,0 +1,42 @@
+diff --git a/recovery.c b/recovery.c
+index 3fbbacb..9e065e5 100644
+--- a/recovery.c
++++ b/recovery.c
+@@ -905,7 +905,7 @@ main(int argc, char **argv) {
+         prompt_and_wait();
+     }
+ 
+-    verify_root_and_recovery();
++    //verify_root_and_recovery();
+ 
+     // If there is a radio image pending, reboot now to install it.
+     maybe_install_firmware_update(send_intent);
+
+diff --git a/recovery_keys.c b/recovery_keys.c
+index 013c169..0db4897 100644
+--- a/recovery_keys.c
++++ b/recovery_keys.c
+@@ -14,7 +14,7 @@ int device_toggle_display(volatile char* key_pressed, int key_code) {
+         return 0;
+         //return get_allow_toggle_display() && (key_code == KEY_HOME || key_code == KEY_MENU || key_code == KEY_END);
+     }
+-    return get_allow_toggle_display() && (key_code == KEY_HOME || key_code == KEY_MENU || key_code == KEY_POWER || key_code == KEY_END);
++    return get_allow_toggle_display() && (key_code == KEY_HOME || key_code == KEY_MENU);
+ }
+ 
+ int device_handle_key(int key_code, int visible) {
+@@ -27,12 +27,7 @@ int device_handle_key(int key_code, int visible) {
+                 return HIGHLIGHT_UP;
+ 
+             case KEY_POWER:
+-                if (ui_get_showing_back_button()) {
+-                    return SELECT_ITEM;
+-                }
+-                if (!get_allow_toggle_display())
+-                    return GO_BACK;
+-                break;
++            case KEY_END:
+                 return SELECT_ITEM;
+         }
+     }
+
