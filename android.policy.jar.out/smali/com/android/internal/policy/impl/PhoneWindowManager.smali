@@ -2182,47 +2182,93 @@
 .end method
 
 .method private takeScreenshot()V
-    .locals 4
+    .locals 8
 
     .prologue
-    .line 3289
-    new-instance v0, Landroid/content/Intent;
+    .line 2640
+    iget-object v4, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mScreenshotLock:Ljava/lang/Object;
 
-    const-string v2, "com.motorola.quicknote.action.SCREENSHOT"
+    monitor-enter v4
 
-    invoke-direct {v0, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
-
-    .line 3290
-    .local v0, intent:Landroid/content/Intent;
-    const/high16 v2, 0x1400
-
-    invoke-virtual {v0, v2}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
-
-    .line 3292
+    .line 2641
     :try_start_0
-    iget-object v2, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mContext:Landroid/content/Context;
+    iget-object v3, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mScreenshotConnection:Landroid/content/ServiceConnection;
 
-    invoke-virtual {v2, v0}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
-    :try_end_0
-    .catch Landroid/content/ActivityNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
+    if-eqz v3, :cond_0
 
-    .line 3298
+    .line 2642
+    monitor-exit v4
+
+    .line 2690
     :goto_0
     return-void
 
-    .line 3293
-    :catch_0
-    move-exception v1
+    .line 2644
+    :cond_0
+    new-instance v0, Landroid/content/ComponentName;
 
-    .line 3294
-    .local v1, me:Landroid/content/ActivityNotFoundException;
-    const-string v2, "WindowManager"
+    const-string v3, "com.android.systemui"
 
-    const-string v3, "snapshot: activity not found, e = "
+    const-string v5, "com.android.systemui.screenshot.TakeScreenshotService"
 
-    invoke-static {v2, v3, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+    invoke-direct {v0, v3, v5}, Landroid/content/ComponentName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 2646
+    .local v0, cn:Landroid/content/ComponentName;
+    new-instance v2, Landroid/content/Intent;
+
+    invoke-direct {v2}, Landroid/content/Intent;-><init>()V
+
+    .line 2647
+    .local v2, intent:Landroid/content/Intent;
+    invoke-virtual {v2, v0}, Landroid/content/Intent;->setComponent(Landroid/content/ComponentName;)Landroid/content/Intent;
+
+    .line 2648
+    new-instance v1, Lcom/android/internal/policy/impl/PhoneWindowManager$miui_12;
+
+    invoke-direct {v1, p0}, Lcom/android/internal/policy/impl/PhoneWindowManager$miui_12;-><init>(Lcom/android/internal/policy/impl/PhoneWindowManager;)V
+
+    .line 2685
+    .local v1, conn:Landroid/content/ServiceConnection;
+    iget-object v3, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mContext:Landroid/content/Context;
+
+    const/4 v5, 0x1
+
+    invoke-virtual {v3, v2, v1, v5}, Landroid/content/Context;->bindService(Landroid/content/Intent;Landroid/content/ServiceConnection;I)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_1
+
+    .line 2686
+    iput-object v1, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mScreenshotConnection:Landroid/content/ServiceConnection;
+
+    .line 2687
+    iget-object v3, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mHandler:Landroid/os/Handler;
+
+    iget-object v5, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mScreenshotTimeout:Ljava/lang/Runnable;
+
+    const-wide/16 v6, 0x2710
+
+    invoke-virtual {v3, v5, v6, v7}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
+
+    .line 2689
+    :cond_1
+    monitor-exit v4
 
     goto :goto_0
+
+    .end local v0           #cn:Landroid/content/ComponentName;
+    .end local v1           #conn:Landroid/content/ServiceConnection;
+    .end local v2           #intent:Landroid/content/Intent;
+    :catchall_0
+    move-exception v3
+
+    monitor-exit v4
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw v3
 .end method
 
 .method private updateKeyboardVisibility()V
