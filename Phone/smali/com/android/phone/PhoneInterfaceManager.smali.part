@@ -1,3 +1,4 @@
+
 .method public supplyPinSimRetries(Ljava/lang/String;)I
     .locals 2
     .parameter "pin"
@@ -33,3 +34,40 @@
 
     return v1
 .end method
+
+.method public getSimLockRetries(I)I
+    .locals 3
+    .parameter "type"
+
+    .prologue
+    .line 533
+    new-instance v0, Lcom/android/phone/PhoneInterfaceManager$CheckSimLockRetriesThread;
+
+    iget-object v2, p0, Lcom/android/phone/PhoneInterfaceManager;->mPhone:Lcom/android/internal/telephony/Phone;
+
+    invoke-interface {v2}, Lcom/android/internal/telephony/Phone;->getIccCard()Lcom/android/internal/telephony/IccCard;
+
+    move-result-object v2
+
+    invoke-direct {v0, v2}, Lcom/android/phone/PhoneInterfaceManager$CheckSimLockRetriesThread;-><init>(Lcom/android/internal/telephony/IccCard;)V
+
+    .line 535
+    .local v0, checkSimLockRetriesThread:Lcom/android/phone/PhoneInterfaceManager$CheckSimLockRetriesThread;
+    invoke-virtual {v0}, Lcom/android/phone/PhoneInterfaceManager$CheckSimLockRetriesThread;->start()V
+
+    .line 536
+    invoke-static {}, Lcom/android/internal/telephony/IccCard$PinType;->values()[Lcom/android/internal/telephony/IccCard$PinType;
+
+    move-result-object v2
+
+    aget-object v2, v2, p1
+
+    invoke-virtual {v0, v2}, Lcom/android/phone/PhoneInterfaceManager$CheckSimLockRetriesThread;->checkSimLockRetries(Lcom/android/internal/telephony/IccCard$PinType;)I
+
+    move-result v1
+
+    .line 537
+    .local v1, retry:I
+    return v1
+.end method
+
