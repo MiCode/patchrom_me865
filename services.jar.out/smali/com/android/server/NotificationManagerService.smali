@@ -1446,7 +1446,9 @@
     .prologue
     const/4 v7, 0x0
 
-    const/4 v2, 0x0
+    const/4 v2, 0x1
+
+    return v2
 
     .line 999
     iget-object v0, p0, Lcom/android/server/NotificationManagerService;->mContext:Landroid/content/Context;
