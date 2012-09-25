@@ -242,8 +242,6 @@ system/bin/who|system/bin/busybox
 system/bin/wipe|system/bin/toolbox
 system/bin/xargs|system/bin/busybox
 system/bin/zcat|system/bin/busybox
-system/etc/firmware/ti-connectivity/wl12xx-fac-nvs.bin|pds/wifi/nvs_map_mac80211.bin
-system/etc/firmware/ti-connectivity/wl12xx-upd-nvs.bin|data/misc/wifi/firmware/wl12xx-nvs.bin
 system/fonts/DroidSans-Bold.ttf|system/fonts/Roboto-Bold.ttf
 system/fonts/DroidSans.ttf|system/fonts/Roboto-Regular.ttf
 system/preinstall|preinstall
