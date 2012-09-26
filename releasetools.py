@@ -3,6 +3,8 @@ import edify_generator
 
 def AddAssertions(info):
     info.script.AppendExtra('set_perm_recursive(0, 2000, 06755, 06755, "/system/xbin");');
+	info.script.AppendExtra('symlink("/pds/wifi/nvs_map_mac80211.bin", "/system/etc/firmware/ti-connectivity/wl12xx-fac-nvs.bin");');
+	info.script.AppendExtra('symlink("/data/misc/wifi/firmware/wl12xx-nvs.bin", "/system/etc/firmware/ti-connectivity/wl12xx-upd-nvs.bin");');
     edify = info.script
     for i in xrange(len(edify.script)):
         if "assert" in edify.script[i]:
@@ -20,3 +22,4 @@ def FullOTA_InstallEnd(info):
 
 def IncrementalOTA_InstallEnd(info):
     AddAssertions(info)
+
