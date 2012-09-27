@@ -13,7 +13,7 @@ local-previous-target-dir := ~/workspace/ota_base/me865
 # All apps from original ZIP, but has smali files chanded
 local-modified-apps := BlurCamera MediaProvider
 
-local-modified-jars := com.motorola.android.storage
+local-modified-jars := 
 
 local-miui-modified-apps := Mms MiuiHome Settings Phone ThemeManager TelephonyProvider
 # All apks from MIUI
