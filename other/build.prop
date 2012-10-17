@@ -159,7 +159,7 @@ persist.fuse_sdcard=true
 ro.mot.fuse.preserve=400
 
 #switcher for allowing the volume key(up&down) to wakeup phone
-persist.mot.volumekey.wakeup=0
+persist.mot.volumekey.wakeup=1
 
 # BEGIN Motorola, cfm876, 04/25/2012, IKCNDEVICS-5251
 #Indicating the automatic birghtness mode
