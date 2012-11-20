@@ -7046,7 +7046,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_0
+    #if-eqz v0, :cond_0
 
     .line 1322
     if-eqz p1, :cond_2
