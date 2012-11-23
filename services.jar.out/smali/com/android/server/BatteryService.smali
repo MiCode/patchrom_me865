@@ -1548,6 +1548,9 @@
 
     .line 312
     .local v7, dischargeDuration:J
+
+    goto/16 :cond_1
+
     iget v0, p0, Lcom/android/server/BatteryService;->mBatteryStatus:I
 
     const/4 v1, 0x5
@@ -1977,26 +1980,13 @@
 
     iget v1, p0, Lcom/android/server/BatteryService;->mLowBatteryWarningLevel:I
 
-    if-gt v0, v1, :cond_a
+    if-gt v0, v1, :cond_17
 
     if-nez v10, :cond_b
 
     iget v0, p0, Lcom/android/server/BatteryService;->mLastBatteryLevel:I
 
     iget v1, p0, Lcom/android/server/BatteryService;->mLowBatteryWarningLevel:I
-
-    if-gt v0, v1, :cond_b
-
-    :cond_a
-    iget v0, p0, Lcom/android/server/BatteryService;->mBatteryLevel:I
-
-    iget v1, p0, Lcom/android/server/BatteryService;->mVeryLowBatteryWarningLevel:I
-
-    if-gt v0, v1, :cond_17
-
-    iget v0, p0, Lcom/android/server/BatteryService;->mLastBatteryLevel:I
-
-    iget v1, p0, Lcom/android/server/BatteryService;->mVeryLowBatteryWarningLevel:I
 
     if-le v0, v1, :cond_17
 
