@@ -20,5 +20,10 @@
                 <action android:name="android.accounts.LOGIN_ACCOUNTS_PRE_CHANGED" />
             </intent-filter>
         </receiver>
+        <service android:name=".MakeMmsPreviewService" android:exported="true">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.MAKE_MMS_PREVIEW" />
+            </intent-filter>
+        </service>
     </application>
 </manifest>
